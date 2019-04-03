@@ -1,3 +1,4 @@
+package classes;
 /*
  * Represents a wallet with dollar bills form various denominations
  */

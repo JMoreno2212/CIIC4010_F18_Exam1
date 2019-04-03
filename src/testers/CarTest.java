@@ -1,7 +1,10 @@
+package testers;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import classes.Car;
 
 public class CarTest {
 	private static final double EPSILON = 0.00001;

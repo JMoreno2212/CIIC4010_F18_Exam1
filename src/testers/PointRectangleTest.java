@@ -1,3 +1,4 @@
+package testers;
 import static org.junit.Assert.*;
 
 import java.awt.Point;
@@ -5,6 +6,8 @@ import java.awt.Rectangle;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import classes.PointRectangle;
 
 public class PointRectangleTest {
 

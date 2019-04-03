@@ -1,35 +1,19 @@
-public class Car {
+package solutions;
+public class CarSolved {
 	
-	private double mileage;
-	private double gasInTank;
-	private double milesPerGallon;
-	private double tripMileage;
-	private double tripGasConsumed;
+	private double mileage, gasInTank, milesPerGallon, tripMileage, tripGasConsumed;
 	
-	public Car(double milesPerGallon) {
+	public CarSolved(double milesPerGallon) {
 		super();
 		this.milesPerGallon = milesPerGallon;
 	}
 
-	public double getMileage() {
-		return mileage;
-	}
-
-	public double getGasInTank() {
-		return gasInTank;
-	}
-
-	public double getMilesPerGallon() {
-		return milesPerGallon;
-	}
-
-	public double getTripMileage() {
-		return tripMileage;
-	}
-
-	public double getTripGasConsumed() {
-		return tripGasConsumed;
-	}
+	// Getters
+	public double getMileage() {return mileage;}
+	public double getGasInTank() {return gasInTank;}
+	public double getMilesPerGallon() {return milesPerGallon;}
+	public double getTripMileage() {return tripMileage;}
+	public double getTripGasConsumed() {return tripGasConsumed;}
 
 	public void pumpGas(double gallons) {
 	    this.gasInTank = this.gasInTank + gallons;
@@ -51,6 +35,7 @@ public class Car {
 	    return this.tripMileage / this.tripGasConsumed;
 	}
 	
+	// This method requires the previous one to be completed
 	public void refineMPG() {
 		this.milesPerGallon = (this.milesPerGallon + (this.getTripMilesPerGallon() * 2))/3;
 	}

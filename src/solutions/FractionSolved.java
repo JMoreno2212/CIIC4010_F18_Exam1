@@ -1,28 +1,26 @@
-public class Fraction {
+package solutions;
+
+public class FractionSolved {
 	
-	private int numerator;
-	private int denominator;
+	private int numerator, denominator;
 	
-	public Fraction(int numerator, int denominator) {
+	public FractionSolved(int numerator, int denominator) {
 		super();
 		this.numerator = numerator;
 		this.denominator = denominator;
 	}
 
-	public int getNumerator() {
-		return numerator;
-	}
+	// Getters
+	public int getNumerator() {return numerator;}
+	public int getDenominator() {return denominator;}
 	
-	public int getDenominator() {
-		return denominator;
-	}
-	
+	// Finds greatest common divisor
 	public int gcd(int a, int b) {
 		if (a % b == 0) return b;
-		return gcd(b, a%b);
+		return gcd(b, a % b);
 	}
 
-	public Fraction minimize() {
+	public FractionSolved minimize() {
 		int newNumerator = this.numerator;
 		int newDenominator = this.denominator;
 		int common = gcd(newNumerator, newDenominator);
@@ -30,35 +28,35 @@ public class Fraction {
 			newNumerator = newNumerator /= common;
 			newDenominator = newDenominator /= common;
 		}
-		Fraction newFraction = new Fraction(newNumerator, newDenominator);
+		FractionSolved newFraction = new FractionSolved(newNumerator, newDenominator);
 		return newFraction;
 	}
 	
-	public Fraction add(Fraction f2) {
+	public FractionSolved add(FractionSolved f2) {
 		int resultNum = (this.numerator * f2.denominator) + (f2.numerator * this.denominator);
 		int resultDen = this.denominator * f2.denominator;
-		Fraction result = new Fraction(resultNum, resultDen);
+		FractionSolved result = new FractionSolved(resultNum, resultDen);
 		return result;
 	}
 
-	public Fraction subtract(Fraction f2) {
+	public FractionSolved subtract(FractionSolved f2) {
 		int resultNum = (this.numerator * f2.denominator) - (f2.numerator * this.denominator);
 		int resultDen = this.denominator * f2.denominator;
-		Fraction result = new Fraction(resultNum, resultDen);
+		FractionSolved result = new FractionSolved(resultNum, resultDen);
 		return result;
 	}
 
-	public Fraction multiply(Fraction f2) {
+	public FractionSolved multiply(FractionSolved f2) {
 		int resultNum = this.numerator * f2.numerator;
 		int resultDen = this.denominator * f2.denominator;
-		Fraction result = new Fraction(resultNum, resultDen);
+		FractionSolved result = new FractionSolved(resultNum, resultDen);
 		return result;
 	}
 
-	public Fraction divide(Fraction f2) {
+	public FractionSolved divide(FractionSolved f2) {
 		int resultNum = this.numerator * f2.denominator;
 		int resultDen = this.denominator * f2.numerator;
-		Fraction result = new Fraction(resultNum, resultDen);
+		FractionSolved result = new FractionSolved(resultNum, resultDen);
 		return result;
 	}
 

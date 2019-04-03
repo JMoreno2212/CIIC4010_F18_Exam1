@@ -1,7 +1,10 @@
+package testers;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import classes.RGBColor;
 
 public class RGBColorTest {
 
